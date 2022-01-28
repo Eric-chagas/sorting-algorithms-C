@@ -18,7 +18,7 @@ My personal C sorting algorithm storage.
 Most of the algorithms already include test case within the code so simply compile and run.
 
 >
-> Eric Chagas de Oliveira - eric_chagaso@protonmail.com
+> Eric Chagas de Oliveira - eric_chagaso@protonmail.com <br>
 > Brasília, DF <br>
 > january, 2022
 >
