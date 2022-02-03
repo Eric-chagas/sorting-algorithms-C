@@ -21,7 +21,7 @@ void insertionSortH(item *, int, int, int);
 void shellSort(item *, int, int);
 
 //Binary Search prototype
-int binarySearch(item[50000] , int, int, int);
+int binarySearch(item *, int, int, int);
 
 int main(void) {
 
@@ -73,26 +73,26 @@ void shellSort(item *v, int l, int r){
 }
 
 //Binary Search definition
-int binarySearch(item v[50000], int l, int r, int element){
+int binarySearch(item *v, int l, int r, int element){
     int h = (r+l)/2;
-    printf("h: %d\n", h);
+    //printf("h: %d\n", h);
     
     //Stop condition
-    if(h <= 0 || l > r) {
+    if(h < 0 || l > r) {
         return -1;
     }
     else{
         if(element < v[h]){
-            printf("element(%d) < %d\n", element, v[h]);
-            printf("calling binarySearch(v, %d, %d, %d)\n", l, h, element);
-            binarySearch(v, l, h, element);
+            //printf("element(%d) < %d\n", element, v[h]);
+            //printf("calling binarySearch(v, %d, %d, %d)\n", l, h, element);
+            return binarySearch(v, l, h-1, element);
         }
         else if(element > v[h]) {
-            printf("element(%d) > %d\n", element, v[h]); 
-            printf("calling binarySearch(v, %d, %d, %d)\n", h+1, r, element);
-            binarySearch(v, h+1, r, element);
+            //printf("element(%d) > %d\n", element, v[h]); 
+            //printf("calling binarySearch(v, %d, %d, %d)\n", h+1, r, element);
+            return binarySearch(v, h+1, r, element);
         }
-        else if(element == v[h]) {
+        else { //element == v[h]
             return h;
         }
     }
